@@ -123,7 +123,7 @@ DB_PORT=3306
 DB_DATABASE=pocketmon
 DB_USERNAME=root
 DB_PASSWORD=
-```bash
+```
 
 ### 5. Migrasi Database
 ```bash
