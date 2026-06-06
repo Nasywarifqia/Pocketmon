@@ -115,6 +115,7 @@ php artisan key:generate
 ```
 
 ### 4. Konfigurasi Database
+```bash
 Edit file `.env`:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -122,6 +123,7 @@ DB_PORT=3306
 DB_DATABASE=pocketmon
 DB_USERNAME=root
 DB_PASSWORD=
+```bash
 
 ### 5. Migrasi Database
 ```bash
