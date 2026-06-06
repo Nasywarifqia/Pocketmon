@@ -1,4 +1,4 @@
-# PocketMon 🐷
+# PocketMon
 Final Project Pemrograman Website - Sistem Manajemen Keuangan Pribadi Berbasis Web
 
 PocketMon adalah aplikasi web manajemen keuangan pribadi yang membantu pengguna mencatat pemasukan, pengeluaran, target tabungan (brankas), dan memantau kondisi keuangan secara mudah dan terorganisir.
