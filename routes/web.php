@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {    
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('incomes', IncomeController::class);
     Route::resource('expenses', ExpenseController::class);

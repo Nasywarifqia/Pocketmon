@@ -18,7 +18,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="PocketMon" class="w-8 h-8 object-contain">
             </div>
             <h1 class="text-2xl font-bold text-gray-800">Buat Akun Baru</h1>
-            <p class="text-gray-400 text-sm mt-1">Mulai kelola keuanganmu sekarang 🚀</p>
+            <p class="text-gray-400 text-sm mt-1">Mulai kelola keuanganmu sekarang!</p>
         </div>
 
         {{-- Card --}}
