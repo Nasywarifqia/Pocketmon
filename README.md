@@ -1,58 +1,164 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# PocketMon 
+Final Project Pemrograman Website - Sistem Manajemen Keuangan Pribadi Berbasis Web
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+PocketMon adalah aplikasi web manajemen keuangan pribadi yang membantu pengguna mencatat pemasukan, pengeluaran, target tabungan (brankas), dan memantau kondisi keuangan secara mudah dan terorganisir.
 
-## About Laravel
+Website ini dikembangkan untuk membantu pengguna mengelola keuangan secara lebih teratur melalui pencatatan transaksi, pemantauan saldo wallet, serta visualisasi laporan keuangan yang informatif.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Dashboard
+- Ringkasan total saldo dari semua wallet
+- Total pemasukan dan pengeluaran
+- Progress brankas tabungan aktif
+- Grafik keuangan 6 bulan terakhir
+- Transaksi terbaru
 
-## Learning Laravel
+### Manajemen Wallet
+- Tambah, edit, hapus wallet
+- Tipe wallet: Cash, Bank Account, Credit Card, E-Wallet
+- Transfer antar wallet
+- Saldo otomatis berubah setiap ada transaksi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Manajemen Pemasukan
+- Tambah, edit, hapus pemasukan
+- Kategori: Gaji, Bonus, Bisnis, Freelance, Hadiah, Lainnya
+- Filter berdasarkan kategori dan tanggal
+- Pencarian data
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Manajemen Pengeluaran
+- Tambah, edit, hapus pengeluaran
+- Kategori: Makanan, Transportasi, Pendidikan, Belanja, Hiburan, Kesehatan, Tagihan, Lainnya
+- Filter berdasarkan kategori dan tanggal
+- Pencarian data
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Brankas (Target Tabungan)
+- Membuat target tabungan dengan nama brankas
+- Progress bar pencapaian otomatis
+- Prioritas: Tinggi, Sedang, Rendah
+- Status: Belum Tercapai / Tercapai
+- Deadline tabungan
 
-## Agentic Development
+### Riwayat Transaksi
+- Menampilkan seluruh aktivitas keuangan
+- Filter berdasarkan jenis transaksi dan tanggal
+- Pencarian data transaksi
+- Pagination
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Laporan Keuangan
+- Ringkasan keuangan bulanan
+- Grafik pemasukan dan pengeluaran 12 bulan terakhir
+- Breakdown per kategori
 
+### Autentikasi
+- Register & Login
+- Session authentication
+- Edit profil & ganti password
+
+---
+
+## Desain
+
+PocketMon menggunakan konsep desain modern, minimalis, dan soft aesthetic dengan kombinasi warna pastel:
+
+| Warna | Kode |
+|-------|------|
+| Soft Pink | #F8D7DA |
+| Soft Mint | #D1E7DD |
+| Soft Lavender | #E2D9F3 |
+| Light Background | #F8F9FA |
+
+Font yang digunakan: **Poppins**
+
+---
+
+## Tech Stack
+
+### Frontend
+- Blade Templates
+- Tailwind CSS
+- JavaScript
+- Chart.js
+
+### Backend
+- PHP 8.3
+- Laravel 13
+
+### Database
+- MySQL
+
+### Local Development
+- Laragon
+
+---
+
+## Instalasi
+
+### 1. Clone Repository
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/username/pocketmon.git
+cd pocketmon
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Setup Environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Konfigurasi Database
+```bash
+Edit file `.env`:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pocketmon
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+### 5. Migrasi Database
+```bash
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Jalankan Aplikasi
+```bash
+npm run dev
+php artisan serve
+```
 
-## Security Vulnerabilities
+### 7. Buka Browser
+mimimi
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Struktur Database
 
-## License
+- `users` — data pengguna
+- `wallets` — data wallet/akun keuangan
+- `wallet_transfers` — riwayat transfer antar wallet
+- `incomes` — data pemasukan
+- `expenses` — data pengeluaran
+- `brankas` — data target tabungan
+- `savings_goals` — data savings goals
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Tujuan Pengembangan
+
+PocketMon dikembangkan sebagai solusi sederhana untuk membantu mahasiswa, fresh graduate, dan anak muda usia 18–30 tahun dalam mengelola keuangan pribadi secara lebih efektif, terstruktur, dan mudah dipantau.
+
+---
+
+## Developed By
+
+**Gishub Team**
+Software Engineering Project — Pemrograman Website
