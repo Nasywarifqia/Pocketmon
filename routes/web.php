@@ -12,10 +12,10 @@ use App\Http\Controllers\WalletController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
-});
+    return view('landing');
+})->name('landing');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('incomes', IncomeController::class);
     Route::resource('expenses', ExpenseController::class);
