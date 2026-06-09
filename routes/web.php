@@ -30,5 +30,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/wallets/transfer', [WalletController::class, 'transfer'])->name('wallets.transfer');
 });
 
-Route::get('/guest', [App\Http\Controllers\GuestController::class, 'index'])->name('guest.dashboard');
+Route::prefix('guest')->name('guest.')->group(function () {
+    Route::get('/', [App\Http\Controllers\GuestController::class, 'index'])->name('dashboard');
+    Route::get('/incomes', [App\Http\Controllers\GuestController::class, 'incomeIndex'])->name('incomes');
+    Route::post('/incomes', [App\Http\Controllers\GuestController::class, 'incomeStore'])->name('incomes.store');
+    Route::delete('/incomes/{id}', [App\Http\Controllers\GuestController::class, 'incomeDestroy'])->name('incomes.destroy');
+    Route::get('/expenses', [App\Http\Controllers\GuestController::class, 'expenseIndex'])->name('expenses');
+    Route::post('/expenses', [App\Http\Controllers\GuestController::class, 'expenseStore'])->name('expenses.store');
+    Route::delete('/expenses/{id}', [App\Http\Controllers\GuestController::class, 'expenseDestroy'])->name('expenses.destroy');
+    Route::get('/brankas', [App\Http\Controllers\GuestController::class, 'brankasIndex'])->name('brankas');
+    Route::post('/brankas', [App\Http\Controllers\GuestController::class, 'brankasStore'])->name('brankas.store');
+    Route::delete('/brankas/{id}', [App\Http\Controllers\GuestController::class, 'brankasDestroy'])->name('brankas.destroy');
+    Route::post('/reset', [App\Http\Controllers\GuestController::class, 'reset'])->name('reset');
+});
+
 require __DIR__.'/auth.php';
