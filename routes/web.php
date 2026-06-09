@@ -30,4 +30,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/wallets/transfer', [WalletController::class, 'transfer'])->name('wallets.transfer');
 });
 
+Route::get('/guest', [App\Http\Controllers\GuestController::class, 'index'])->name('guest.dashboard');
 require __DIR__.'/auth.php';

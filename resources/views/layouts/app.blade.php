@@ -70,26 +70,28 @@
 
             {{-- User Info --}}
             <div class="p-2 border-t border-gray-100">
-                <a href="{{ route('profile.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-50 hover:bg-[#F8D7DA] transition group">
-                    @if(Auth::user()->photo)
-                        <img src="{{ asset('storage/' . Auth::user()->photo) }}"
-                            class="w-8 h-8 rounded-full object-cover flex-shrink-0">
-                    @else
-                        <div class="w-8 h-8 rounded-full bg-[#F8D7DA] flex items-center justify-center flex-shrink-0">
-                            <span class="text-sm font-bold text-pink-600">{{ substr(Auth::user()->name, 0, 1) }}</span>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-50">
+                    <a href="{{ route('profile.index') }}" class="flex items-center gap-3 flex-1 min-w-0 hover:opacity-80 transition group">
+                        @if(Auth::user()->photo)
+                            <img src="{{ asset('storage/' . Auth::user()->photo) }}"
+                                class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                        @else
+                            <div class="w-8 h-8 rounded-full bg-[#F8D7DA] flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-bold text-pink-600">{{ substr(Auth::user()->name, 0, 1) }}</span>
+                            </div>
+                        @endif
+                        <div class="flex-1 min-w-0 hide-on-collapse">
+                            <p class="text-sm font-semibold text-gray-700 truncate group-hover:text-pink-700">{{ Auth::user()->name }}</p>
+                            <p class="text-xs text-gray-400 truncate">{{ Auth::user()->email }}</p>
                         </div>
-                    @endif
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-semibold text-gray-700 truncate group-hover:text-pink-700">{{ Auth::user()->name }}</p>
-                        <p class="text-xs text-gray-400 truncate">{{ Auth::user()->email }}</p>
-                    </div>
+                    </a>
                     <form method="POST" action="{{ route('logout') }}" class="hide-on-collapse">
                         @csrf
-                        <button type="submit" class="text-gray-400 hover:text-red-500 transition" onclick="event.stopPropagation()">
+                        <button type="submit" class="text-gray-400 hover:text-red-500 transition">
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </button>
                     </form>
-                </a>
+                </div>
             </div>
         </aside>
 

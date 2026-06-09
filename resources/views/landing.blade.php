@@ -117,6 +117,10 @@
                     <i class="fa-solid fa-right-to-bracket"></i>
                     Sudah Punya Akun
                 </a>
+                <a href="{{ route('guest.dashboard') }}" class="btn-secondary">
+                    <i class="fa-solid fa-eye"></i>
+                    Coba Sebagai Tamu
+                </a>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
